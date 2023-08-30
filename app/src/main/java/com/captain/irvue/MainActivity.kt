@@ -535,82 +535,81 @@ fun SelectionScreen(modifier: Modifier) {
 @Composable
 fun Preview() {
     IRvueTheme {
-//        App()
-        Compose()
+        App()
     }
 }
 
-@Composable
-fun Compose() {
-    Column(
-        modifier = Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally
-    ){
-        var person by remember {
-            mutableStateOf(0)
-        }
-
-        LaunchedEffect(key1 = Unit, block = {
-            while (true) {
-                delay(5000)
-                person = (55..130).random()
-            }
-        })
-
-        val nextColor by remember(person) {
-            mutableStateOf(colors.random())
-        }
-
-        val text by remember(person) { mutableStateOf("$person") }
-        val colorNum by animateColorAsState(targetValue = nextColor)
-
-        Column(horizontalAlignment = Alignment.CenterHorizontally) {
-            Spacer(Modifier.height(30.dp))
-            Text(
-                text = "BCA Learning Institute",
-                color = Color(100, 185, 230),
-                fontSize = 24.sp,
-                fontFamily = FontFamily.SansSerif, fontWeight = FontWeight.ExtraBold
-            )
-            Spacer(Modifier.height(110.dp))
-            Text(
-                text = "STALL",
-                color = Color(100, 185, 180),
-                fontSize = 30.sp,
-                fontFamily = FontFamily.SansSerif,
-                fontWeight = FontWeight.ExtraBold
-            )
-            Box(
-                modifier = Modifier
-                    .padding(60.dp)
-                    .border(2.dp, Color(105, 205, 216), shape = RoundedCornerShape(8.dp))
-                    .aspectRatio(1f),
-                contentAlignment = Alignment.Center
-            ) {
-                Text(
-                    text = "$person",
-                    color = colorNum,
-                    fontSize = 100.sp,
-                )
-            }
-            Spacer(Modifier.height(110.dp))
-            Button(
-                onClick = {  },
-                modifier = Modifier
-                    .height(45.dp)
-                    .width(240.dp),
-                shape = RoundedCornerShape(8.dp),
-                colors = ButtonDefaults.buttonColors(Color(120, 80, 215))
-            ) {
-                Text(
-                    text = "Back",
-                    fontSize = 22.sp,
-                    color = Color.Black,
-                    fontFamily = FontFamily.SansSerif,
-                    fontWeight = FontWeight.SemiBold
-                )
-            }
-        }
-    }
-}
+//@Composable
+//fun Compose() {
+//    Column(
+//        modifier = Modifier.fillMaxSize(),
+//        horizontalAlignment = Alignment.CenterHorizontally
+//    ){
+//        var person by remember {
+//            mutableStateOf(0)
+//        }
+//
+//        LaunchedEffect(key1 = Unit, block = {
+//            while (true) {
+//                delay(5000)
+//                person = (55..130).random()
+//            }
+//        })
+//
+//        val nextColor by remember(person) {
+//            mutableStateOf(colors.random())
+//        }
+//
+//        val text by remember(person) { mutableStateOf("$person") }
+//        val colorNum by animateColorAsState(targetValue = nextColor)
+//
+//        Column(horizontalAlignment = Alignment.CenterHorizontally) {
+//            Spacer(Modifier.height(30.dp))
+//            Text(
+//                text = "BCA Learning Institute",
+//                color = Color(100, 185, 230),
+//                fontSize = 24.sp,
+//                fontFamily = FontFamily.SansSerif, fontWeight = FontWeight.ExtraBold
+//            )
+//            Spacer(Modifier.height(110.dp))
+//            Text(
+//                text = "STALL",
+//                color = Color(100, 185, 180),
+//                fontSize = 30.sp,
+//                fontFamily = FontFamily.SansSerif,
+//                fontWeight = FontWeight.ExtraBold
+//            )
+//            Box(
+//                modifier = Modifier
+//                    .padding(60.dp)
+//                    .border(2.dp, Color(105, 205, 216), shape = RoundedCornerShape(8.dp))
+//                    .aspectRatio(1f),
+//                contentAlignment = Alignment.Center
+//            ) {
+//                Text(
+//                    text = "$person",
+//                    color = colorNum,
+//                    fontSize = 100.sp,
+//                )
+//            }
+//            Spacer(Modifier.height(110.dp))
+//            Button(
+//                onClick = {  },
+//                modifier = Modifier
+//                    .height(45.dp)
+//                    .width(240.dp),
+//                shape = RoundedCornerShape(8.dp),
+//                colors = ButtonDefaults.buttonColors(Color(120, 80, 215))
+//            ) {
+//                Text(
+//                    text = "Back",
+//                    fontSize = 22.sp,
+//                    color = Color.Black,
+//                    fontFamily = FontFamily.SansSerif,
+//                    fontWeight = FontWeight.SemiBold
+//                )
+//            }
+//        }
+//    }
+//}
 
